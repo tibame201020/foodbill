@@ -3,21 +3,18 @@ package com.custom.foodbill.services;
 import com.custom.foodbill.models.food.FoodRecommendInTake;
 import com.custom.foodbill.services.impl.FoodCalcImpl;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
 import java.math.BigDecimal;
 
-@SpringBootTest(classes = FoodCalcImpl.class)
+@ExtendWith(MockitoExtension.class)
 class FoodCalcTest {
-    private final FoodCalc foodCalc;
-
-    @Autowired
-    public FoodCalcTest(FoodCalc foodCalc) {
-        this.foodCalc = foodCalc;
-    }
+    @InjectMocks
+    private FoodCalcImpl foodCalc;
 
     @Test
     void getFoodRecommendInTake() {
@@ -32,4 +29,5 @@ class FoodCalcTest {
                 .expectNext(expect2)
                 .verifyComplete();
     }
+
 }
