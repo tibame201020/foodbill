@@ -1,5 +1,8 @@
 package com.custom.foodbill.constants;
 
+/**
+ * UserCustomKey種類
+ */
 public enum UserCustomCategory {
     /**
      * record時段

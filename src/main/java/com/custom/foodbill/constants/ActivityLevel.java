@@ -2,6 +2,10 @@ package com.custom.foodbill.constants;
 
 import java.math.BigDecimal;
 
+/**
+ * 計算TDEE加成
+ * Total Daily Energy Expenditure calculator
+ */
 public enum ActivityLevel {
     LOW("每周運動頻率: 近乎沒有運動", BigDecimal.valueOf(1.2)),
     LIGHT("每周運動頻率: 1-3天", BigDecimal.valueOf(1.375)),

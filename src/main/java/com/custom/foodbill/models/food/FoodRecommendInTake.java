@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 
 @Data
 public class FoodRecommendInTake implements Serializable {
+
+    private int calories;
     /**
      * 全穀雜糧類(碗)
      */

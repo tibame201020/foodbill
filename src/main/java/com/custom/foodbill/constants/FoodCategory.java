@@ -1,5 +1,8 @@
 package com.custom.foodbill.constants;
 
+/**
+ * 六大類食物
+ */
 public enum FoodCategory {
     GRAINS("全穀雜糧類(碗)"),
     MEAT_BEANS("豆魚蛋肉類(份)"),
