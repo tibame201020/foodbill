@@ -17,9 +17,9 @@ public class CaloriesCalcUtil {
      */
     public static BigDecimal calcBasicBMR(BigDecimal height, BigDecimal weight, int age, boolean isMale) {
         if (isMale) {
-            return calcMaleBMR(height,  weight, age);
+            return calcMaleBMR(height, weight, age);
         } else {
-            return calcFemaleBMR(height,  weight, age);
+            return calcFemaleBMR(height, weight, age);
         }
     }
 
@@ -29,7 +29,7 @@ public class CaloriesCalcUtil {
      * 身高 * 6.25 + 體重 * 10 + 年齡 * 5 + 5
      */
     private static BigDecimal calcMaleBMR(BigDecimal height, BigDecimal weight, int age) {
-        return calcBMRWithoutChargeSex(height,  weight, age)
+        return calcBMRWithoutChargeSex(height, weight, age)
                 .add(BigDecimal.valueOf(5))
                 .setScale(0, RoundingMode.HALF_UP);
     }
@@ -40,7 +40,7 @@ public class CaloriesCalcUtil {
      * 身高 * 6.25 + 體重 * 10 + 年齡 * 5 - 161
      */
     private static BigDecimal calcFemaleBMR(BigDecimal height, BigDecimal weight, int age) {
-        return calcBMRWithoutChargeSex(height,  weight, age)
+        return calcBMRWithoutChargeSex(height, weight, age)
                 .subtract(BigDecimal.valueOf(161))
                 .setScale(0, RoundingMode.HALF_UP);
     }
@@ -64,7 +64,7 @@ public class CaloriesCalcUtil {
      * 基礎代謝率 * 活動程度加成
      */
     public static BigDecimal calcTDEE(BigDecimal height, BigDecimal weight, int age, boolean isMale, ActivityLevel activityLevel) {
-        return calcBasicBMR(height,  weight, age, isMale)
+        return calcBasicBMR(height, weight, age, isMale)
                 .multiply(activityLevel.getBonus())
                 .setScale(0, RoundingMode.HALF_UP);
     }

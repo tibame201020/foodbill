@@ -3,7 +3,6 @@ package com.custom.foodbill.utils;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,6 +15,7 @@ class BMICalcUtilTest {
         BigDecimal expect = BigDecimal.valueOf(21.8);
 
         BigDecimal result = BMICalcUtil.calcBMI(height, weight);
+
         assertEquals(expect, result);
     }
 
@@ -26,6 +26,7 @@ class BMICalcUtilTest {
         BigDecimal expect = BigDecimal.valueOf(63.0);
 
         BigDecimal result = BMICalcUtil.accordingTargetBMIFindWeight(bmi, height);
+
         assertEquals(expect, result);
     }
 
@@ -36,6 +37,7 @@ class BMICalcUtilTest {
         BigDecimal expect = BigDecimal.valueOf(63.0);
 
         BigDecimal result = BMICalcUtil.calcIdealWeight(height, isMale);
+
         assertEquals(expect, result);
     }
 
@@ -47,6 +49,7 @@ class BMICalcUtilTest {
         BigDecimal expect = BigDecimal.ZERO;
 
         BigDecimal result = BMICalcUtil.calcPercentToIdealWeight(height, weight, isMale);
+
         assertEquals(expect, result);
 
     }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CaloriesCalcUtilTest {
 
@@ -18,6 +18,7 @@ class CaloriesCalcUtilTest {
         BigDecimal expect = BigDecimal.valueOf(1548);
 
         BigDecimal result = CaloriesCalcUtil.calcBasicBMR(height, weight, age, isMale);
+
         assertEquals(expect, result);
     }
 
@@ -31,6 +32,7 @@ class CaloriesCalcUtilTest {
         BigDecimal expect = BigDecimal.valueOf(2670);
 
         BigDecimal result = CaloriesCalcUtil.calcTDEE(height, weight, age, isMale, activityLevel);
+
         assertEquals(expect, result);
     }
 }
