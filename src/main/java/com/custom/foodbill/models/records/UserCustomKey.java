@@ -18,5 +18,5 @@ public class UserCustomKey implements Serializable {
      * 名稱
      */
     private String name;
-    private UserCustomCategory category;
+    private UserCustomCategory userCustomCategory;
 }

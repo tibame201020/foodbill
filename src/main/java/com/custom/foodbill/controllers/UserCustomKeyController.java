@@ -18,6 +18,15 @@ public class UserCustomKeyController {
         this.userCustomKeyService = userCustomKeyService;
     }
 
+    @RequestMapping("/test")
+    public Flux<UserCustomKey> test() {
+        return userCustomKeyService.getDefaultProp(UserCustomCategory.MEAL_TIME);
+    }
+
+//    public Flux<UserCustomKey> addOrUpdateUserCustomKeys() {
+//
+//    }
+
     @RequestMapping("/getDefaultProp")
     public Flux<UserCustomKey> getDefaultProp(@RequestBody UserCustomCategory userCustomCategory) {
         return userCustomKeyService.getDefaultProp(userCustomCategory);
